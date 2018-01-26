@@ -19,16 +19,22 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['prefix' => 'tarif'] , function(){
 
-		Route::get('' , 'Tarif@index');
-		Route::get('add','Tarif@add');
+	Route::get('' , 'Tarif@index');
+	Route::get('add','Tarif@add');
 });
 
 Route::group(['prefix' => 'user'] , function(){
 
-		Route::get('' , 'HomeController@user');
-		Route::get('add','HomeController@add');
-		Route::post('save','HomeController@save');
-		Route::get('edit/{id}','HomeController@edit');
-		Route::post('update','HomeController@update');
-		Route::get('delete/{id}','HomeController@delete');
+	Route::get('' , 'HomeController@user');
+	Route::get('add','HomeController@add');
+	Route::post('save','HomeController@save');
+	Route::get('edit/{id}','HomeController@edit');
+	Route::post('update','HomeController@update');
+	Route::get('delete/{id}','HomeController@delete');
+});
+
+Route::group(['prefix' => 'pembayaran'] , function(){
+	Route::get('' , 'Pembayaran@index');
+	Route::get('add','Pembayaran@add');
+	Route::post('save','Pembayaran@save');
 });

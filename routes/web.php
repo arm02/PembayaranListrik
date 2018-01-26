@@ -38,3 +38,13 @@ Route::group(['prefix' => 'pembayaran'] , function(){
 	Route::get('add','Pembayaran@add');
 	Route::post('save','Pembayaran@save');
 });
+
+Route::group(['prefix' => 'tagihan'] , function(){
+
+	Route::get('' , 'TagihanPLO@index');
+	Route::get('add','TagihanPLO@add');
+	Route::post('save','TagihanPLO@save');
+	Route::get('edit/{id}','TagihanPLO@edit');
+	Route::post('update','TagihanPLO@update');
+	Route::get('delete/{id}','TagihanPLO@delete');
+});

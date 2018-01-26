@@ -15,6 +15,7 @@ class CreatePenggunaansTable extends Migration
     {
         Schema::create('penggunaans', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('id_pelanggan');
             $table->string('bulan');
             $table->string('tahun');
             $table->string('meterawal');

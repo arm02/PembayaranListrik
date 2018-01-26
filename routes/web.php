@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'tarif'] , function(){
+
+		Route::get('' , 'Tarif@index');
+		Route::get('add','Tarif@add');
+});

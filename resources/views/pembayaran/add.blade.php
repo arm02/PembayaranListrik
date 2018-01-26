@@ -8,6 +8,12 @@ Pembayaran Add
 <div class="container">
   <div class="row">
     <form method="POST" action="{{url('pembayaran/save')}}">
+      <div class="form-group">
+      <label for="id_pelanggan">Pelanggan</label>
+      <select name="id_pelanggan" class="form-control">
+            <option value="{{$id_pelanggan->id}}">{{$id_pelanggan->nama}}</option>
+      </select>
+    </div>
      <div class="form-group">
       <label for="tanggal">Tanggal</label>
       <input id="tanggal" type="date" 
@@ -18,6 +24,7 @@ Pembayaran Add
       <label for="bulanbayar">Bulan Bayar</label>
       <select class="form-control" name="bulanbayar" required="Harap Masukan" oninvalid="this.setCustomValidity('Tolong Isi Bulan Bayar')"
       oninput="setCustomValidity('')">
+      <option selected>Pilih satu !!!</option>
       <option value="Januari">Januari</option>
       <option value="Februari">Februari</option>
       <option value="Maret">Maret</option>
@@ -36,7 +43,7 @@ Pembayaran Add
     <label for="biayaadmin">Biaya Admin</label>
     <input id="biayaadmin" type="text" 
     class="form-control" name="biayaadmin" required="Harap Masukan" oninvalid="this.setCustomValidity('Tolong Isi Biaya Admin')"
-    oninput="setCustomValidity('')">
+    oninput="setCustomValidity('')" value="{{$tarif}}">
   </div>
   <input type="hidden" name="_token" value="{{csrf_token()}}">
   <center>

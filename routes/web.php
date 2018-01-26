@@ -35,8 +35,9 @@ Route::group(['prefix' => 'user'] , function(){
 
 Route::group(['prefix' => 'pembayaran'] , function(){
 	Route::get('' , 'Pembayaran@index');
-	Route::get('add','Pembayaran@add');
+	Route::get('add/{id}','Pembayaran@add');
 	Route::post('save','Pembayaran@save');
+	Route::get('delete/{id}','Pembayaran@delete');
 });
 
 Route::group(['prefix' => 'tagihan'] , function(){
@@ -47,4 +48,5 @@ Route::group(['prefix' => 'tagihan'] , function(){
 	Route::get('edit/{id}','TagihanPLO@edit');
 	Route::post('update','TagihanPLO@update');
 	Route::get('delete/{id}','TagihanPLO@delete');
+	Route::get('search','TagihanPLO@search');
 });

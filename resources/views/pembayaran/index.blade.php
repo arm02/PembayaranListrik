@@ -23,8 +23,8 @@ Pembayaran Index
 				</tr>
 			</thread>
 			<tbody>
+				@foreach($pembayaran as $key)
 				<tr>
-					@foreach($pembayaran as $key)
 					<td style="text-align: center;">{{ $key->id_pembayaran }}</td>
 					<td style="text-align: center;">{{ $key->tanggal }}</td>
 					<td style="text-align: center;">{{ $key->bulanbayar }}</td>
@@ -32,8 +32,8 @@ Pembayaran Index
 					<td style="text-align: center;">
 						<a href="{{url('')}}" onclick="return confirm('are u sure to delete ?')"><button class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
 					</td>
-					@endforeach
 				</tr>
+				@endforeach
 			</tbody>
 		</table>
 	</div>

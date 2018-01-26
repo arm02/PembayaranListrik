@@ -48,3 +48,13 @@ Route::group(['prefix' => 'tagihan'] , function(){
 	Route::post('update','TagihanPLO@update');
 	Route::get('delete/{id}','TagihanPLO@delete');
 });
+
+Route::group(['prefix' => 'penggunaan'] , function(){
+
+	Route::get('' , 'Penggunaann@index');
+	Route::get('add','Penggunaann@add');
+	Route::post('save','Penggunaann@save');
+	Route::get('edit/{id}','Penggunaann@edit');
+	Route::post('update','Penggunaann@update');
+	Route::get('delete/{id}','Penggunaann@delete');
+});

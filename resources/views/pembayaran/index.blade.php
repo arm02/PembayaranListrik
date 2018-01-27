@@ -8,7 +8,6 @@ Pembayaran Index
 
 <div class="container">
 	<div class="row">
-		<a href="{{url('pembayaran/add')}}"><button class="btn btn-primary"><i class="fa fa-plus"></i></button></a>
 		<a href="{{url('pembayaran/pdf')}}" ><button class="btn btn-success">PDF</button></a>
 		<br>
 		<br>
@@ -24,13 +23,16 @@ Pembayaran Index
 			</thread>
 			<tbody>
 				@foreach($pembayaran as $key)
+				<?php
+				$getnama = \App\Pelanggan::whereId($key->id_pelanggan)->value('nama');
+				?>
 				<tr>
-					<td style="text-align: center;">{{ $key->id_pembayaran }}</td>
+					<td style="text-align: center;">{{ $getnama }}</td>
 					<td style="text-align: center;">{{ $key->tanggal }}</td>
 					<td style="text-align: center;">{{ $key->bulanbayar }}</td>
 					<td style="text-align: center;">{{ $key->biayaadmin }}</td>
 					<td style="text-align: center;">
-						<a href="{{url('')}}" onclick="return confirm('are u sure to delete ?')"><button class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
+						<a href="{{url('pembayaran/delete/'.$key->id)}}" onclick="return confirm('are u sure to delete ?')"><button class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
 					</td>
 				</tr>
 				@endforeach

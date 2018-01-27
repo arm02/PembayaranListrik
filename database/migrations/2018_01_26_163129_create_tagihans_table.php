@@ -15,10 +15,11 @@ class CreateTagihansTable extends Migration
     {
         Schema::create('tagihans', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('id_pelanggan');
             $table->string('bulan');
             $table->string('tahun');
             $table->string('jumlahmeter');
-            $table->string('status');
+            $table->string('status')->default(1);
             $table->timestamps();
         });
     }

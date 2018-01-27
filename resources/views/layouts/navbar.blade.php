@@ -47,7 +47,7 @@
                         <li><a href="">Pelanggan</a></li>
                         <li><a href="">Penggunaan</a></li>
                         <li><a href="{{url('tagihan')}}">Tagihan</a></li>
-                        <li><a href="">Pembayaran</a></li>
+                        <li><a href="{{url('pembayaran')}}">Pembayaran</a></li>
                         <li><a href="{{url('user')}}">User</a></li>
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>

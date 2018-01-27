@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Pelanggan;
+use \App\Tarif;
+use \App\Tagihan;
 
 class Pembayaran extends Controller
 {
@@ -11,8 +14,15 @@ class Pembayaran extends Controller
 		return view('pembayaran.index')->with('pembayaran', $pembayaran);
 	}
 
-	public function add(){
-		return view('pembayaran.add');
+	public function add($id){
+		$pelanggan = Pelanggan::find($id);
+		$getkodetarif = Pelanggan::whereId($id)->value('kodetarif');
+		$gettarif = Tarif::whereKodetarif($getkodetarif)->value('tarifperkwh');
+		$getjumlahmeter = Tagihan::whereIdPelanggan($id)->value('jumlahmeter');
+		$hasil = $getjumlahmeter * $gettarif;
+		return view('pembayaran.add')->with('id_pelanggan',$pelanggan)->with('tarif',$hasil);
+
+
 	}
 	public function save(Request $r)
 	{
@@ -23,6 +33,12 @@ class Pembayaran extends Controller
 		$pembayaran->biayaadmin = $r->biayaadmin;
 		$pembayaran->save();
 
+		return redirect(url('pembayaran'));
+	}
+
+	public function delete($id){
+		$bayar = \App\Pembayaran::find($id);
+		$bayar->delete();
 		return redirect(url('pembayaran'));
 	}
 }

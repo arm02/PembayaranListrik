@@ -21,6 +21,10 @@ Route::group(['prefix' => 'tarif'] , function(){
 
 	Route::get('' , 'Tarif@index');
 	Route::get('add','Tarif@add');
+	Route::post('save','Tarif@save');
+	Route::get('/{id}/edit','Tarif@edit');
+	Route::post('update','Tarif@update');
+	Route::get('delete/{id}','Tarif@delete');
 });
 
 Route::group(['prefix' => 'user'] , function(){

@@ -21,11 +21,11 @@ class Penggunaann extends Controller
 	public function save(Request $r)
 	{
 		$penggunaan =  new Penggunaan;
-		$penggunaan->id_pelanggan = $r->id_pelanggan;
-		$penggunaan->bulan = $r->bulan;
-		$penggunaan->tahun = $r->tahun;
-		$penggunaan->meterawal = $r->meterawal;
-		$penggunaan->meterakhir = $r->meterakhir;
+		$penggunaan->id_pelanggan = $r->input('id_pelanggan');
+		$penggunaan->bulan = $r->input('bulan');
+		$penggunaan->tahun = $r->input('tahun');
+		$penggunaan->meterawal = $r->input('meterawal');
+		$penggunaan->meterakhir = $r->input('meterakhir');
 		$penggunaan->save();
 
 		return redirect(url('penggunaan'));

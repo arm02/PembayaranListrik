@@ -27,7 +27,7 @@ Tagihan Index
 			<th style="text-align: center;">Tahun</th>
 			<th style="text-align: center;">Jumlah Meter</th>
 			<th style="text-align: center;">Status</th>
-			<th colspan="3" style="text-align: center;">Action</th>
+			<th style="text-align: center;">Action</th>
 		</tr>
 	</thread>
 	<tbody>
@@ -40,15 +40,16 @@ Tagihan Index
 			<td style="text-align: center;">{{$r->bulan}}</td>
 			<td style="text-align: center;">{{$r->tahun}}</td>
 			<td style="text-align: center;">{{$r->jumlahmeter}}</td>
-			<td style="text-align: center;">@if($r->status==1)BELUM LUNAS @else LUNAS @endif</td>
+			<td style="text-align: center;">@if($r->status==1)<label style="color: red;">BELUM LUNAS</label> @else <label style="color: green;">LUNAS</label> @endif</td>
 			<td style="text-align: center;">
-				<a href="{{url('pembayaran/add/'.$r->id_pelanggan)}}">
-					<button class="btn btn-warning" style="display: none">@if($r->status==2)LUNAS</button>
-					@else
-					<button class="btn btn-warning">PEMBAYARAN @endif</button>
-				</a>
+				@if($r->status==2)
 				<a href="{{url('tagihan/delete/'.$r->id)}}" onclick="return confirm('are u sure to delete ?')">
-				<button class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button></a>
+				<button class="btn btn-danger" title="Delete"><span class="fa fa-trash"></span></button></a>
+				@else
+				<a href="{{url('pembayaran/add/'.$r->id)}}">
+					<button class="btn btn-warning" title="Pay Now"><span class="fa fa-money"></span></button>
+				</a>
+				@endif
 			</td>
 		</tr>
 		@endforeach

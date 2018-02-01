@@ -15,12 +15,15 @@ class Pembayaran extends Controller
 	}
 
 	public function add($id){
-		$pelanggan = Pelanggan::find($id);
-		$getkodetarif = Pelanggan::whereId($id)->value('kodetarif');
+
+		$pelanggan = Tagihan::find($id);
+		$get = Tagihan::whereId($id)->value('id_pelanggan');
+		$id_pelanggan = Pelanggan::whereId($get)->first();
+		$getkodetarif = Pelanggan::whereId($get)->value('kodetarif');
 		$gettarif = Tarif::whereKodetarif($getkodetarif)->value('tarifperkwh');
-		$getjumlahmeter = Tagihan::whereIdPelanggan($id)->value('jumlahmeter');
+		$getjumlahmeter = Tagihan::whereId($id)->value('jumlahmeter');
 		$hasil = $getjumlahmeter * $gettarif;
-		return view('pembayaran.add')->with('id_pelanggan',$pelanggan)->with('tarif',$hasil);
+		return view('pembayaran.add')->with('id_pelanggan',$id_pelanggan)->with('tarif',$hasil);
 
 
 	}
@@ -39,6 +42,6 @@ class Pembayaran extends Controller
 	public function delete($id){
 		$bayar = \App\Pembayaran::find($id);
 		$bayar->delete();
-		return redirect(url('pembayaran'));
+		return redirect(url('pembayaran'));		
 	}
 }

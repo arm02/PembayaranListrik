@@ -24,8 +24,8 @@ Penggunaan
     </tr>
   </thread>
   <tbody>
-    <tr>
       @foreach($penggunaan as $key)
+    <tr>
       <?php
         $getname = \App\Pelanggan::whereId($key->id_pelanggan)->value('nama');
       ?>
@@ -39,8 +39,8 @@ Penggunaan
         <a href="{{url('penggunaan/edit/'.$key->id)}}"><button class="btn btn-warning"><i class="fa fa-edit"></i></button></a>
         <a href="{{url('penggunaan/delete/'.$key->id)}}" onclick="return confirm('are u sure to delete ?')"><button class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
       </td>
-      @endforeach
     </tr>
+      @endforeach
   </tbody>
 </table>
 </div>

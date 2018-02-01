@@ -3,9 +3,49 @@
 @section('content')
 <div class="container">
     <div class="row">
+
+
+
+
+
+
+
+
+          <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Cek Tagihan Bulanan PLO</div>
+
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="get" action="{{ url('search/pelanggan') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group">
+                            <label for="email" class="col-md-4 control-label">ID Pelanggan</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="query" placeholder="Masukan ID Pelanggan" id="cari">
+                                <input type="hidden" name="search" value="1">
+                                <br>
+                                
+                                 <button style="width: 25%;" type="submit" class="btn btn-primary pull-right">
+                                    Cek
+                                </button>
+                            </div>
+                        </div>
+
+                      
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">Login Sebagai Admin</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -64,6 +104,14 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
     </div>
 </div>
 @endsection

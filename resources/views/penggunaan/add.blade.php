@@ -15,7 +15,7 @@ Penggunaan Add
      <select class="form-control" name="id_pelanggan" required="Harap Masukan" oninvalid=" this.setCustomValidity('Tolong Isi Nama')">
       <option selected>Pilih Satu !!</option>
       @foreach($pelanggan as $key)
-      <option value="{{$key->id_pelanggan}}">{{$key->nama}}</option>
+      <option value="{{$key->id}}">{{$key->nama}}</option>
       @endforeach
      </select>
     </div>

@@ -39,7 +39,7 @@ Route::group(['prefix' => 'user'] , function(){
 
 Route::group(['prefix' => 'pembayaran'] , function(){
 	Route::get('' , 'Pembayaran@index');
-	Route::get('add','Pembayaran@add');
+	Route::get('add/{id}','Pembayaran@add');
 	Route::post('save','Pembayaran@save');
 });
 
@@ -61,4 +61,9 @@ Route::group(['prefix' => 'penggunaan'] , function(){
 	Route::get('edit/{id}','Penggunaann@edit');
 	Route::post('update','Penggunaann@update');
 	Route::get('delete/{id}','Penggunaann@delete');
+});
+
+Route::group(['prefix' => 'search'] , function(){
+
+	Route::get('pelanggan' , 'UserInterface@search');
 });

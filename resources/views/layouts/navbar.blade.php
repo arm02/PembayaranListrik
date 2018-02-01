@@ -44,7 +44,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         <li><a href="{{url('tarif')}}">Tarif</a></li>
-                        <li><a href="">Pelanggan</a></li>
+                        <li><a href="{{url('pelanggan')}}">Pelanggan</a></li>
                         <li><a href="{{url('penggunaan')}}">Penggunaan</a></li>
                         <li><a href="{{url('tagihan')}}">Tagihan</a></li>
                         <li><a href="{{url('pembayaran')}}">Pembayaran</a></li>

@@ -19,7 +19,5 @@ class UserInterface extends Controller
       $tagihan = Tagihan::where('id_pelanggan',$pelanggan->id)->get();
       $pembayaran = Pembayaran::where('id_pelanggan',$pelanggan->id)->get();
       return view('userinterface.index')->with('pelanggan', $pelanggan)->with('query', $query)->with('tarif',$kode_tarif)->with('tagihan',$tagihan)->with('pembayaran',$pembayaran);
-
-
     }
 }

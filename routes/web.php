@@ -68,7 +68,7 @@ Route::group(['prefix' => 'pelanggan'] , function(){
 	Route::get('' , 'PelangganController@index');
 	Route::get('add','PelangganController@add');
 	Route::post('save','PelangganController@save');
-	Route::get('edit/{id}','PelangganController@edit');
+	Route::get('{id}/edit','PelangganController@edit');
 	Route::post('update','PelangganController@update');
 	Route::get('delete/{id}','PelangganController@delete');
 });

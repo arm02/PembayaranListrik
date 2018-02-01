@@ -15,7 +15,6 @@ class Pembayaran extends Controller
 	}
 
 	public function add($id){
-
 		$pelanggan = Tagihan::find($id);
 		$get = Tagihan::whereId($id)->value('id_pelanggan');
 		$id_pelanggan = Pelanggan::whereId($get)->first();
@@ -24,9 +23,8 @@ class Pembayaran extends Controller
 		$getjumlahmeter = Tagihan::whereId($id)->value('jumlahmeter');
 		$hasil = $getjumlahmeter * $gettarif;
 		return view('pembayaran.add')->with('id_pelanggan',$id_pelanggan)->with('tarif',$hasil);
-
-
 	}
+	
 	public function save(Request $r)
 	{
 		$pembayaran =  new \App\Pembayaran;

@@ -28,8 +28,8 @@ Pelanggan Index
   	<td>{{$key->alamat}}</td>
   	<td>{{$key->kodetarif}}</td>
     <td>
-  	<a href="{{url('')}}"><button class="btn btn-warning"><i class="fa fa-edit"></i></button></a>
-        <a href="{{url('')}}" onclick="return confirm('are u sure to delete ?')"><button class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
+  	<a href="{{url('pelanggan/'.$key->id.'/edit')}}"><button class="btn btn-warning"><i class="fa fa-edit"></i></button></a>
+        <a href="{{url('pelanggan/delete/'.$key->id)}}" onclick="return confirm('are u sure to delete ?')"><button class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
     </td>
     
 

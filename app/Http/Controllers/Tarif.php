@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
 class Tarif extends Controller
 {
   public function index(){
@@ -15,6 +14,7 @@ class Tarif extends Controller
  public function add(){
    return view('tarif.add');
  }
+
  public function save(Request $r)
  {
   $tarif =  new \App\Tarif;
@@ -42,13 +42,13 @@ public function update(Request $request)
   $b->save();
   return redirect(url('tarif'));
 }
+
 public function delete($id)
 {
-  $tarif = \app\tarif::find($id);
+  $tarif = \App\Tarif::find($id);
   $tarif->delete();
 
   return redirect('tarif');
 }
-
 
 }

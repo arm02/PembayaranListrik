@@ -29,8 +29,8 @@ Tarif Index
 					<td style="text-align: center;">{{ $key->daya }}</td>
 					<td style="text-align: center;">{{ $key->tarifperkwh }}</td>
 					<td style="text-align: center;">
-						<a href="{{ url('tarif/'.$key->id.'/edit') }}" onclick="return "><button class="btn btn-primary"><i class="fa fa-trash-o"></i></button></a>
-						<a href="{{url('')}}" onclick="return confirm('are u sure to delete ?')"><button class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
+						<a href="{{ url('tarif/'.$key->id.'/edit') }}" onclick="return "><button class="btn btn-warning"><i class="fa fa-edit"></i></button></a>
+						<a href="{{ url('tarif/delete/'.$key->id) }}" onclick="return confirm('are u sure to delete ?')"><button class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
 					</td>
 				</tr>
 				@endforeach

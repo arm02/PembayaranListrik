@@ -57,10 +57,10 @@ class TagihanPLO extends Controller
     	return redirect(url('tagihan'));
     }
 
-     public function search(Request $r)
+    public function search(Request $r)
     {
       $query = $r->input('query');
       $tagihan = Tagihan::where('id_pelanggan','like','%'.$query.'%')->orderBy('id','asc')->paginate(20);
       return view('tagihan.index')->with('tagihan', $tagihan)->with('query', $query);
-    }
+  }
 }

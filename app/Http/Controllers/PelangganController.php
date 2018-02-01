@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Pelanggan;
-use \App\Pengunaan;
+use \App\Penggunaan;
 use \App\Tarif;
 
 class PelangganController extends Controller
@@ -27,10 +27,9 @@ class PelangganController extends Controller
     	return redirect(url('pelanggan'));
     }
     public function edit($id){
-    	$peng = Penggunaan::get();
-    	$tarif = Tarif::get();
-    	$tarif2 = Tarif::find($id);
-    	return view('pelanggan.edit')->with('peng',$peng)->with('tarif',$tarif);
+        $pel = Pelanggan::find($id);
+        $tarif = Tarif::get();
+        return view('pelanggan.edit')->with('pel',$pel)->with('tarif',$tarif);
     }
     public function update(Request $r){
     	$pel = Pelanggan::find($r->input('id'));

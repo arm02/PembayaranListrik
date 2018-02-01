@@ -5,8 +5,8 @@ Pelanggan Index
 @section('content')
 <div class="container">
 <div class="row">
-<a href="{{url('tarif/add')}}"><button class="btn btn-primary"><i class="fa fa-plus"></i></button></a>
-    <a href="{{url('tarif/pdf')}}" ><button class="btn btn-success">PDF</button></a>
+<a href="{{url('pelanggan/add')}}"><button class="btn btn-primary"><i class="fa fa-plus"></i></button></a>
+    <a href="{{url('pelanggan/pdf')}}" ><button class="btn btn-success">PDF</button></a>
     <br>
 <br>
 

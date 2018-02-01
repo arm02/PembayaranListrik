@@ -17,7 +17,7 @@ class PelangganController extends Controller
     	$gettarif = Tarif::all();
     	return view('pelanggan.add')->with('tarif',$gettarif);
     }
-    public function save(request $r){
+    public function save(Request $r){
     	$pel = new Pelanggan;
     	$pel->nometer = $r->input('nometer');
     	$pel->nama = $r->input('nama');
@@ -32,7 +32,7 @@ class PelangganController extends Controller
     	$tarif2 = Tarif::find($id);
     	return view('pelanggan.edit')->with('peng',$peng)->with('tarif',$tarif);
     }
-    public function update(request $r){
+    public function update(Request $r){
     	$pel = Pelanggan::find($r->input('id'));
     	$pel->nometer = $r->input('nometer');
     	$pel->nama = $r->input('nama');
@@ -41,7 +41,7 @@ class PelangganController extends Controller
     	$pel->save();
     	return redirect(url('pelanggan'));
     }
-    public function delete(){
+    public function delete($id){
     	$pel = Pelanggan::find($id);
     	$pel->delete();
     	return redirect(url('pelanggan'));

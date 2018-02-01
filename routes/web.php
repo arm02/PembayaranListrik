@@ -63,6 +63,16 @@ Route::group(['prefix' => 'penggunaan'] , function(){
 	Route::get('delete/{id}','Penggunaann@delete');
 });
 
+Route::group(['prefix' => 'pelanggan'] , function(){
+
+	Route::get('' , 'PelangganController@index');
+	Route::get('add','PelangganController@add');
+	Route::post('save','PelangganController@save');
+	Route::get('edit/{id}','PelangganController@edit');
+	Route::post('update','PelangganController@update');
+	Route::get('delete/{id}','PelangganController@delete');
+});
+
 Route::group(['prefix' => 'search'] , function(){
 
 	Route::get('pelanggan' , 'UserInterface@search');
